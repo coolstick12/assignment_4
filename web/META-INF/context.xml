@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/TOBA">
+    <Resource name="jdbc/toba"
+        type="javax.sql.DataSource"
+        factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/assignment3"
+        username="root"
+        password="coolstick12"
+        maxActive="8"
+        maxIdle="4"
+        maxWait="10000"
+        auth="Container" />
+        
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+        localDataSource="true"
+        digest="MD5"
+        dataSourceName="jdbc/assignment3"
+        userTable="user"
+        userNameCol="USERNAME"
+        userCredCol="PASSWORD"
+        userRoleTable="userrole"
+        roleNameCol="Rolename"/>
+</Context>
